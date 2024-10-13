@@ -24,6 +24,10 @@ body {
     padding: 20px 180px;
 }
 
+.navbar nav:nth-child(1) ul {
+    cursor: pointer;
+}
+
 .navbar nav:nth-child(2) ul {
     display: flex;
     justify-content: center;
@@ -31,6 +35,12 @@ body {
     column-gap: 40px;
     font-size: 15px;
     font-weight: 600;
+}
+
+.navbar nav:nth-child(2) ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
 }
 
 .navbar nav:nth-child(3) ul {
@@ -44,6 +54,11 @@ body {
     padding: 8px 13px;
     border-radius: 29px;
     font-weight: bold;
+}
+
+.navbar button:hover {
+    color: rgb(88, 101, 242);
+    cursor: pointer;
 }
 
 #menu-svg {
