@@ -264,44 +264,51 @@ body {
     padding-top: 15px;
 }
 
-.line-animation {
-    margin-top: 200px;
-    display: flex;
-    gap: 40px;
-    justify-content: space-between;
-    align-items: center;
+.carousel {
     border: 2px solid white;
-    padding: 20px 50px;
-    background: rgb(85, 83, 246);
+    margin-top: 200px;
+    padding: 25px 50px;
     background: linear-gradient(180deg, rgba(85, 83, 246, 1) 21%, rgba(76, 72, 245, 1) 32%, rgba(215, 201, 249, 0.8990428935245973) 100%);
-}
-
-.line-animation h1 {
     display: flex;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'ABC Ginto Nord Unlicensed Trial', sans-serif;
-    font-size: 60px;
-    font-weight: 800;
-    animation: move 20s linear infinite forwards;
-}
+    overflow: hidden;
 
+    &:hover {
+        .carousel__slide {
+            animation-play-state: paused;
+        }
+    }
 
+    .carousel__slide {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        animation: 15s slide_to_left infinite linear;
 
-@keyframes move {
-    from {}
+        h1 {
+            font-size: 4.2rem;
+            font-weight: 800;
+            font-family: 'ABC Ginto Nord Unlicensed Trial', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
 
-    to {
-        transform: translate(-500%);
+            img {
+                width: 2rem;
+                margin-left: 2rem;
+                flex-shrink: 0;
+            }
+
+        }
     }
 }
 
-@keyframes move2 {
-    from {}
+@keyframes slide_to_left {
+    from {
+        transform: translateX(0)
+    }
 
     to {
-        transform: translate(-400%);
+        transform: translateX(-100%)
     }
 }
 
@@ -642,6 +649,10 @@ footer {
         padding: 20px 100px;
     }
 
+    .carousel .carousel__slide h1 {
+        font-size: 3.8rem;
+    }
+
     .hero .box:nth-child(1) {
         padding: 130px 140px 0px 140px;
     }
@@ -699,17 +710,6 @@ footer {
 }
 
 @media only screen and (max-width:1290px) {
-
-    .line-animation {
-        margin-top: 160px;
-        gap: 0px;
-        padding: 20px 0px;
-    }
-
-    .line-animation h1 {
-        gap: 40px;
-        font-size: 50px;
-    }
 
     .pre-footer div:nth-child(2) img {
         width: 120px;
@@ -1174,10 +1174,6 @@ footer {
 }
 
 @media only screen and (max-width:975px) {
-    .line-animation h1 {
-        gap: 40px;
-        font-size: 35px;
-    }
 
     .pre-footer div:nth-child(1) img {
         width: 45px;
@@ -1205,6 +1201,10 @@ footer {
 
     .heading-centre {
         padding: 0 50px;
+    }
+
+    .carousel .carousel__slide h1 {
+        font-size: 3.5rem;
     }
 
     #vdo {
@@ -1338,6 +1338,11 @@ footer {
 }
 
 @media only screen and (max-width:770px) {
+
+    .carousel .carousel__slide h1 {
+        font-size: 3rem;
+    }
+
     .hero2 .boxes2 {
         flex-direction: column-reverse;
         padding: 50px 20px 20px 20px;
@@ -1401,11 +1406,6 @@ footer {
         padding: 80px 100px 30px 70px;
     }
 
-    .line-animation h1 {
-        gap: 5px;
-        font-size: 30px;
-    }
-
     .pre-footer div:nth-child(1) img {
         width: 35px;
     }
@@ -1430,6 +1430,11 @@ footer {
 }
 
 @media only screen and (max-width:700px) {
+
+    .carousel .carousel__slide h1 {
+        font-size: 2.5rem;
+    }
+
     .hero2 .moving-gif {
         padding-right: 100px;
     }
@@ -1582,11 +1587,6 @@ footer {
         width: 400px;
     }
 
-    .line-animation h1 {
-        gap: 5px;
-        font-size: 25px;
-    }
-
     #small-img {
         width: 500px;
     }
@@ -1623,13 +1623,12 @@ footer {
         padding: 20px 25px 20px 20px;
     }
 
-    #vdo {
-        width: 350px;
+    .carousel .carousel__slide h1 {
+        font-size: 2rem;
     }
 
-    .line-animation h1 {
-        gap: 5px;
-        font-size: 20px;
+    #vdo {
+        width: 350px;
     }
 
     #small-img {
@@ -1776,14 +1775,12 @@ footer {
 }
 
 @media only screen and (max-width:420px) {
-    #vdo {
-        width: 300px;
+    .carousel .carousel__slide h1 {
+        font-size: 1.5rem;
     }
 
-    .line-animation h1 {
-        gap: 5px;
-        font-size: 16px;
-        animation: move2 5s linear infinite forwards;
+    #vdo {
+        width: 300px;
     }
 
     #small-img {
@@ -1896,15 +1893,6 @@ footer {
         width: 270px;
     }
 
-    .line-animation h1 {
-        gap: 5px;
-        font-size: 14px;
-    }
-
-    .line-animation h1 img {
-        width: 25px;
-    }
-
     .pre-footer div:nth-child(1) img {
         width: 8px;
     }
@@ -1934,11 +1922,6 @@ footer {
         width: 250px;
     }
 
-    .line-animation h1 {
-        gap: 5px;
-        font-size: 12px;
-    }
-
     #small-img {
         width: 250px;
     }
@@ -1954,20 +1937,12 @@ footer {
         width: 220px;
     }
 
-    .line-animation h1 img {
-        width: 20px;
-    }
 }
 
 @media only screen and (max-width:300px) {
 
-    .line-animation h1 {
-        gap: 5px;
-        font-size: 10px;
-    }
-
-    .line-animation h1 img {
-        width: 18px;
+    .carousel .carousel__slide h1 {
+        font-size: 1rem;
     }
 
     #vdo {
